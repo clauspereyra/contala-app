@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - /bin/bash -c "source /home/jlmagenc/nodevenv/contala/24/bin/activate && cd /home/jlmagenc/contala && npm install --omit=dev"
+    - /bin/mkdir -p /home/jlmagenc/contala/tmp
+    - /bin/touch /home/jlmagenc/contala/tmp/restart.txt
