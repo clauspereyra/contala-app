@@ -98,6 +98,16 @@ label.f input{border:1.5px solid var(--line);border-radius:10px;padding:11px;bac
 .pill.live{background:var(--ok-soft);color:var(--ok)}
 .pill.draft{background:var(--bg);color:var(--muted);border:1px solid var(--line)}
 .empty{padding:28px;text-align:center;color:var(--muted)}
+.biz{display:grid;grid-template-columns:minmax(120px,200px) 1fr;gap:12px;padding:12px 16px;border-top:1px solid var(--line)}
+.biz:first-child{border-top:0}
+.biz b{color:var(--muted);font-weight:600;font-size:.9em}
+.biz div{min-width:0;overflow-wrap:anywhere}
+.biz img{max-width:120px;max-height:80px;border-radius:8px;background:#fff}
+.sw{display:inline-block;width:18px;height:18px;border-radius:5px;vertical-align:-4px;margin-right:4px;border:1px solid var(--line)}
+.fchip{display:inline-flex;align-items:center;gap:6px;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:.85em;color:var(--ink);text-decoration:none;margin-top:6px}
+.m.user .fchip{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3);color:inherit}
+@media (max-width:600px){.biz{grid-template-columns:1fr;gap:2px}}
+@media (max-width:860px){.xgrid{grid-template-columns:1fr!important}}
 
 .work{flex:1;display:grid;grid-template-columns:minmax(320px,430px) 1fr;min-height:0}
 .chat{display:flex;flex-direction:column;border-right:1px solid var(--line);background:var(--surface);min-height:0;min-width:0}
@@ -116,6 +126,14 @@ label.f input{border:1.5px solid var(--line);border-radius:10px;padding:11px;bac
 .chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 10px}
 .chip{border:1.5px solid var(--accent);color:var(--ink);background:var(--surface);border-radius:999px;padding:8px 14px;min-height:42px}
 .chip:hover{background:var(--accent-soft)}
+.ideas{align-self:flex-start;max-width:92%;background:var(--surface);border:1.5px solid var(--accent-soft);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.ideas>b{font-size:.78em;text-transform:uppercase;letter-spacing:.07em;color:var(--accent)}
+.idea{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}
+.idea:first-of-type{border-top:0}
+.idea div{min-width:0}.idea strong{display:block;font-size:.95em}.idea span{color:var(--muted);font-size:.86em}
+.idea button{border:1.5px solid var(--accent);background:none;color:var(--ink);border-radius:999px;padding:6px 12px;font-weight:600;white-space:nowrap}
+.idea button:disabled{border-color:var(--ok);color:var(--ok);cursor:default}
+.ideas .all{align-self:flex-start;background:var(--accent);color:var(--accent-ink);border:0;border-radius:10px;padding:8px 14px;font-weight:700}
 .pending{display:flex;gap:8px;padding:0 16px 8px}
 .pending img{width:52px;height:52px;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
 .input{display:flex;gap:8px;padding:12px 16px;border-top:1px solid var(--line);align-items:flex-end}
@@ -160,7 +178,7 @@ table.t th{color:var(--muted);font-weight:700;border-top:0}
 .wtabs{display:none}
 
 .sheet{position:fixed;inset:0;background:rgba(8,12,16,.55);display:grid;place-items:center;padding:16px;z-index:20}
-.sheet .card{max-width:480px;width:100%;box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
+.sheet .card{max-width:480px;width:100%;max-height:calc(100vh - 32px);overflow:auto;box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
 .field{display:flex;border:1.5px solid var(--line);border-radius:10px;overflow:hidden;background:var(--bg)}
 .field input{flex:1;min-width:0;border:0;background:transparent;padding:11px;outline:none;font-weight:600}
 .field span{padding:11px;color:var(--muted);border-right:1px solid var(--line);white-space:nowrap;font-size:.9em}
@@ -172,6 +190,44 @@ table.t th{color:var(--muted);font-weight:700;border-top:0}
 .qr{width:116px;height:116px;background:#fff;padding:6px;border-radius:8px}
 .qr img,.qr canvas{width:100%!important;height:100%!important;display:block}
 .install ol{margin:0;padding-left:18px;font-size:.86em;color:var(--muted)}
+.tour{position:fixed;inset:0;z-index:40}
+.spot{position:fixed;border-radius:14px;box-shadow:0 0 0 9999px rgba(6,10,14,.62);transition:all .25s;pointer-events:none;outline:3px solid var(--glow)}
+.tcard{position:fixed;z-index:41;background:var(--surface);color:var(--ink);border-radius:16px;padding:18px;width:min(360px,calc(100% - 32px));box-shadow:0 24px 50px -15px rgba(0,0,0,.6);display:flex;flex-direction:column;gap:10px}
+.tcard small{color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.07em;font-size:.72em}
+.tcard h3{margin:0;font-family:var(--display);font-size:1.15em}
+.tcard p{margin:0;color:var(--muted)}
+.tcard .row{justify-content:space-between;align-items:center}
+.help ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;color:var(--muted)}
+.help ol b{color:var(--ink)}
+.help .exs{display:flex;flex-wrap:wrap;gap:8px}
+@media (max-width:860px){.bar .lbl{display:none}.bar{gap:10px}}
+.bell{position:relative}
+.bcount{position:absolute;top:-6px;right:-6px;background:#E5484D;color:#fff;border-radius:999px;font-size:.7em;font-weight:800;min-width:18px;height:18px;display:grid;place-items:center;padding:0 5px}
+.ncard{border:1px solid var(--line);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:6px}
+.ncard.new{border-color:var(--accent);background:var(--accent-soft)}
+.ncard small{color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.7em}
+.ncard p{margin:0;color:var(--muted);font-size:.92em}
+.ncard .row{gap:8px}
+.ncard .row button{min-height:38px;padding:6px 12px}
+.mk h4{margin:4px 0 0;font-size:.95em}
+.mk ul{margin:0;padding-left:18px;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+.mk .comp{display:grid;grid-template-columns:1fr;gap:2px;padding:10px 0;border-top:1px solid var(--line)}
+.mk .comp:first-child{border-top:0}
+.mk .src{font-size:.82em;color:var(--muted);overflow-wrap:anywhere}
+.study{align-self:flex-start;max-width:96%;background:var(--surface);border:1.5px solid var(--accent-soft);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.study>b{font-size:.78em;text-transform:uppercase;letter-spacing:.07em;color:var(--accent)}
+.study details{border-top:1px solid var(--line);padding-top:6px}
+.study summary{cursor:pointer;font-weight:700;font-size:.92em}
+.study ul{margin:6px 0 0;padding-left:18px;color:var(--muted);font-size:.9em}
+.prop{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;padding:8px 0;border-top:1px solid var(--line)}
+.prop input{margin-top:4px;width:18px;height:18px}
+.prop strong{display:block;font-size:.95em}.prop span{color:var(--muted);font-size:.86em}
+.prop em{font-style:normal;font-size:.7em;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-right:6px}
+.m.expert{align-self:stretch;max-width:100%;background:var(--surface);border:1.5px solid var(--glow);border-radius:14px;padding:12px 14px;color:var(--ink)}
+.m.expert small{display:block;color:var(--warn);font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:.72em;margin-bottom:4px}
+.xstat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.xstat b{display:block;font-family:var(--display);font-size:1.8em;line-height:1.1}
+.xstat span{color:var(--muted);font-size:.85em}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;z-index:30;font-size:.9em;max-width:calc(100% - 32px)}
 
 @media (max-width:860px){
@@ -201,9 +257,13 @@ table.t th{color:var(--muted);font-weight:700;border-top:0}
     <nav class="nav" id="nav" hidden>
       <button data-go="/" data-nav="home">Crear</button>
       <button data-go="/apps" data-nav="apps">Mis apps</button>
+      <button data-go="/negocio" data-nav="negocio">Mi negocio</button>
+      <button data-go="/expertos" data-nav="expertos" hidden>Panel experto</button>
     </nav>
     <div class="spacer"></div>
-    <button class="tbtn" id="bigText" aria-pressed="false">A+ Letra grande</button>
+    <button class="tbtn bell" id="bellBtn" aria-label="Ideas y notificaciones" hidden><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="vertical-align:-2px"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span class="lbl"> Ideas</span><span class="bcount" id="bcount" hidden></span></button>
+    <button class="tbtn" id="helpBtn" aria-label="Ayuda">?<span class="lbl"> Ayuda</span></button>
+    <button class="tbtn" id="bigText" aria-pressed="false" aria-label="Letra grande">A+<span class="lbl"> Letra grande</span></button>
     <button class="tbtn" id="logout" hidden>Salir</button>
   </header>
 
@@ -261,6 +321,30 @@ table.t th{color:var(--muted);font-weight:700;border-top:0}
     <div class="wrap gut">
       <div class="phead"><h1>Mis apps</h1><div class="spacer"></div><button class="go" data-go="/">+ Nueva app</button></div>
       <div class="list" id="plist"></div>
+      <div class="phead" style="padding-top:8px"><h2 style="font-family:var(--display);margin:0">Sistemas de gestión</h2><div class="spacer"></div><button class="ghost" id="newVac">+ Sistema de vacaciones</button><button class="ghost" id="newInst">+ Gestión de instituto</button><button class="ghost" id="newSdr">+ CRM de ventas</button></div>
+      <p class="lead" style="margin:-6px 0 12px">Sistemas listos para usar: vacaciones del equipo, institutos (alumnos, familias, cursos, asistencia, notas y cuotas) y CRM de ventas (leads, embudo, seguimientos y resultados de cada vendedor).</p>
+      <div class="list" id="vlist"></div>
+    </div>
+  </main>
+
+  <!-- PANEL DE EXPERTOS -->
+  <main class="scroll" id="v-expertos" hidden>
+    <div class="wrap gut">
+      <div class="phead"><h1>Panel de expertos</h1></div>
+      <div class="tpls" id="xStats" style="grid-template-columns:repeat(auto-fill,minmax(160px,1fr))"></div>
+      <div class="phead" style="padding-top:20px"><h2 style="font-family:var(--display);margin:0">Pedidos de ayuda</h2></div>
+      <div class="list" id="xReq"></div>
+      <div class="phead" style="padding-top:8px"><h2 style="font-family:var(--display);margin:0">Todas las apps</h2><div class="spacer"></div><input class="in" id="xq" placeholder="Buscar app o persona" style="border:1.5px solid var(--line);border-radius:10px;padding:9px;background:var(--surface)"></div>
+      <div class="list" id="xApps"></div>
+    </div>
+  </main>
+
+  <!-- MI NEGOCIO -->
+  <main class="scroll" id="v-negocio" hidden>
+    <div class="wrap gut">
+      <div class="phead"><h1>Lo que Contala sabe de tu negocio</h1></div>
+      <p class="lead" style="margin-top:-6px">Contala lo va aprendiendo de tus charlas y lo usa en todas tus apps. Para agregar o cambiar algo, decíselo en cualquier charla: <em>"mi WhatsApp es…"</em>, <em>"te paso mi manual de marca"</em>, <em>"cambió mi dirección"</em>.</p>
+      <div class="list" id="bizList" style="padding:6px 0"></div>
     </div>
   </main>
 
@@ -271,13 +355,13 @@ table.t th{color:var(--muted);font-weight:700;border-top:0}
       <button role="tab" aria-selected="false" data-t="app">Tu app</button>
     </div>
     <section class="chat">
-      <div class="chathead"><b id="pName">Nueva app</b><button class="mini" id="rename">Renombrar</button></div>
+      <div class="chathead"><b id="pName">Nueva app</b><button class="mini" id="reviewBtn" title="El equipo de Contala revisa tu app y te propone mejoras">Revisar mi app</button><button class="mini" id="rename">Renombrar</button></div>
       <div class="msgs" id="msgs" aria-live="polite"></div>
       <div class="chips" id="chips"></div>
       <div class="pending" id="pending"></div>
       <form class="input" id="form">
-        <label class="ibtn" for="file" title="Sumar imagen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.5 12.6 21a5.5 5.5 0 0 1-7.8-7.8l8.5-8.5a3.7 3.7 0 0 1 5.2 5.2l-8.5 8.5a1.8 1.8 0 0 1-2.6-2.6L15 8"/></svg></label>
-        <input type="file" id="file" accept="image/*" hidden>
+        <label class="ibtn" for="file" title="Sumar imagen o PDF"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.5 12.6 21a5.5 5.5 0 0 1-7.8-7.8l8.5-8.5a3.7 3.7 0 0 1 5.2 5.2l-8.5 8.5a1.8 1.8 0 0 1-2.6-2.6L15 8"/></svg></label>
+        <input type="file" id="file" accept="image/*,application/pdf" hidden>
         <button class="ibtn" type="button" data-mic="say" title="Dictar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>
         <textarea id="say" rows="1" placeholder="Escribí acá…" aria-label="Mensaje"></textarea>
         <button class="go" type="submit" id="send" aria-label="Enviar">→</button>
@@ -293,6 +377,7 @@ table.t th{color:var(--muted);font-weight:700;border-top:0}
         <button role="tab" aria-selected="false" data-p="versions">Versiones</button>
         <button role="tab" aria-selected="false" data-p="data">Datos recibidos</button>
         <button role="tab" aria-selected="false" data-p="publication">Publicación</button>
+        <button role="tab" aria-selected="false" data-p="market">Mercado</button>
       </div>
       <div class="pane" id="p-preview"><div class="canvas">
         <div class="seg"><button aria-pressed="true" data-v="phone">Celular</button><button aria-pressed="false" data-v="pc">Compu</button></div>
@@ -301,11 +386,14 @@ table.t th{color:var(--muted);font-weight:700;border-top:0}
       <div class="pane" id="p-versions" hidden><div class="panel" id="versionsPanel"></div></div>
       <div class="pane" id="p-data" hidden><div class="panel" id="dataPanel"></div></div>
       <div class="pane" id="p-publication" hidden><div class="panel" id="pubPanel"></div></div>
+      <div class="pane" id="p-market" hidden><div class="panel" id="marketPanel"></div></div>
     </section>
   </div>
 </div>
 
 <div class="sheet" id="sheet" hidden><div class="card" id="sheetCard"></div></div>
+<div class="tour" id="tour" hidden><div class="spot" id="spot"></div></div>
+<div class="tcard" id="tcard" hidden></div>
 <div class="toast" id="toast" hidden></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
@@ -314,7 +402,7 @@ table.t th{color:var(--muted);font-weight:700;border-top:0}
 const BASE=window.BASE;
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-let me=null, P=null, dev='phone', pendingImgs=[], busy=false, authMode='register', pendingIdea=null;
+let isExpert=false, pendingSend=null, notes={rows:[],prefs:{}}, flags=[], me=null, P=null, dev='phone', pendingImgs=[], busy=false, authMode='register', pendingIdea=null;
 
 async function api(url,opt={}){
   const r=await fetch(BASE+url,{method:opt.method||(opt.body?'POST':'GET'),headers:opt.body?{'Content-Type':'application/json'}:{},body:opt.body?JSON.stringify(opt.body):undefined,credentials:'same-origin'});
@@ -333,21 +421,24 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(b
 async function route(){
   const path=location.pathname.slice(BASE.length)||'/';
   const m=path.match(/^\/apps\/(\d+)/);
-  ['home','apps','work'].forEach(v=>$('#v-'+v).hidden=true);
+  ['home','apps','work','negocio','expertos'].forEach(v=>$('#v-'+v).hidden=true);
   $$('[data-nav]').forEach(b=>b.removeAttribute('aria-current'));
   if(!me&&path!=='/'){history.replaceState({},'',BASE+'/');return route()}
   if(m){$('#v-work').hidden=false;$('[data-nav=apps]').setAttribute('aria-current','page');return openProject(+m[1])}
+  if(path==='/expertos'&&isExpert){$('#v-expertos').hidden=false;$('[data-nav=expertos]').setAttribute('aria-current','page');return loadExperts()}
+  if(path==='/negocio'){$('#v-negocio').hidden=false;$('[data-nav=negocio]').setAttribute('aria-current','page');return loadBiz()}
   if(path==='/apps'){$('#v-apps').hidden=false;$('[data-nav=apps]').setAttribute('aria-current','page');return loadApps()}
   $('#v-home').hidden=false;$('[data-nav=home]').setAttribute('aria-current','page');
+  if(me)setTimeout(()=>startTour('home'),500);
 }
 
 /* ---------- Cuenta ---------- */
-function setAuth(){$('#nav').hidden=!me;$('#logout').hidden=!me;$('#root').classList.toggle('in',!!me);$('#authCard').hidden=!!me}
+function setAuth(){$('[data-nav=expertos]').hidden=!(me&&isExpert);$('#bellBtn').hidden=!me;if(me)loadBell();$('#nav').hidden=!me;$('#logout').hidden=!me;$('#root').classList.toggle('in',!!me);$('#authCard').hidden=!!me}
 $$('[data-mode]').forEach(b=>b.onclick=()=>{authMode=b.dataset.mode;$$('[data-mode]').forEach(x=>x.setAttribute('aria-selected',x===b));
   $('#nameRow').hidden=authMode==='login';$('#authBtn').textContent=authMode==='login'?'Ingresar':'Crear cuenta';$('#authTitle').textContent=authMode==='login'?'Ingresá a tu cuenta':'Creá tu cuenta gratis';$('#authErr').textContent=''});
 $('#authForm').onsubmit=async e=>{e.preventDefault();$('#authErr').textContent='';$('#authBtn').disabled=true;
   try{await api('/api/'+authMode,{body:{name:$('#aName').value.trim(),email:$('#aEmail').value.trim(),password:$('#aPass').value}});
-    me=(await api('/api/me')).user;setAuth();if(pendingIdea){const t=pendingIdea;pendingIdea=null;newProject(t)}else go('/apps')}
+    {const r2=await api('/api/me');me=r2.user;flags=r2.flags||[];isExpert=!!r2.isExpert}setAuth();if(pendingIdea){const t=pendingIdea;pendingIdea=null;newProject(t)}else go('/apps')}
   catch(x){$('#authErr').textContent=x.message}finally{$('#authBtn').disabled=false}};
 $('#logout').onclick=async()=>{await api('/api/logout',{method:'POST'});me=null;setAuth();go('/')};
 
@@ -368,8 +459,74 @@ $('#start').onclick=()=>startIdea($('#idea').value.trim());
 function startIdea(t){if(!me){pendingIdea=t;$('#authCard').hidden=false;$('#aName').focus();toast('Creá tu cuenta (o ingresá) y arrancamos.');return}newProject(t)}
 async function newProject(text){const {id}=await api('/api/projects',{body:{}});$('#idea').value='';go('/apps/'+id);setTimeout(()=>send(text),300)}
 
+/* ---------- Panel de expertos ---------- */
+async function loadExperts(){
+  const o=await api('/api/expert/overview');
+  $('#xStats').innerHTML=[['Pedidos de ayuda abiertos',o.openHelp],['Personas',o.users],['Nuevas esta semana',o.newUsersWeek],['Apps creadas',o.apps],['Apps publicadas',o.live],['Mensajes IA hoy',o.aiToday],['Mensajes IA 7 días',o.aiWeek],['Sistemas vacaciones',o.vac],['Institutos',o.inst],['CRM de ventas',o.sdr]].map(([t,v])=>`<div class="xstat"><b>${v}</b><span>${t}</span></div>`).join('');
+  const rq=await api('/api/expert/requests');const RS={abierta:'Abierta',en_curso:'En curso',resuelta:'Resuelta'},RW={pedido:'Pidió ayuda',ia_fallo:'La IA falló',complejo:'Proyecto complejo'};
+  $('#xReq').innerHTML=rq.length?rq.map(h=>`<div class="prow" style="cursor:default"><div class="pico" style="background:${h.status==='resuelta'?'var(--muted)':'#E5484D'}">!</div><div><b>${esc(h.user_name)} · ${esc(h.project_name||'sin app')}</b><div class="sub" style="white-space:normal">${RW[h.reason]||esc(h.reason)} · ${new Date(h.created_at).toLocaleString('es-AR')}${h.assigned_name?' · '+esc(h.assigned_name):''}${h.message?' · “'+esc(h.message.slice(0,160))+'”':''}</div></div>
+    <div class="row"><span class="pill ${h.status==='resuelta'?'live':'draft'}">${RS[h.status]}</span>${h.project_id?`<button class="mini" data-xp="${h.project_id}">Ver app</button>`:''}${h.status!=='resuelta'?`<button class="mini" data-xr="${h.id}">Resuelta</button>`:''}</div></div>`).join(''):'<div class="empty">No hay pedidos de ayuda.</div>';
+  $$('[data-xp]').forEach(b=>b.onclick=()=>expertApp(b.dataset.xp));
+  $$('[data-xr]').forEach(b=>b.onclick=async()=>{await api('/api/expert/requests/'+b.dataset.xr,{body:{status:'resuelta'}});loadExperts()});
+  const apps=async()=>{const l=await api('/api/expert/projects?q='+encodeURIComponent($('#xq').value||''));
+    $('#xApps').innerHTML=l.map(p=>`<button class="prow" data-xa="${p.id}"><div class="pico">${esc((p.name||'?')[0].toUpperCase())}</div><div><b>${esc(p.name)}</b><div class="sub">${esc(p.user_name)} · ${esc(p.user_email)} · ${p.ver?'v'+p.ver:'sin versiones'}</div></div><span class="pill ${p.live?'live':'draft'}">${p.live?'En línea':'Borrador'}</span></button>`).join('')||'<div class="empty">Sin resultados.</div>';
+    $$('[data-xa]').forEach(b=>b.onclick=()=>expertApp(b.dataset.xa))};
+  let t;$('#xq').oninput=()=>{clearTimeout(t);t=setTimeout(apps,300)};apps();
+}
+async function expertApp(id){
+  const a=await api('/api/expert/projects/'+id);const c=$('#sheetCard');c.parentNode.style.placeItems='start center';
+  c.style.maxWidth='980px';
+  c.innerHTML=`<div class="row" style="justify-content:space-between"><h2>${esc(a.name)}</h2><button class="ghost" id="xClose">Cerrar</button></div>
+  <p class="sub" style="white-space:normal">${esc(a.user_name)} · ${esc(a.user_email)}${a.url?` · <a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.url)}</a>`:' · sin publicar'}${a.domain?' · dominio '+esc(a.domain.domain)+' ('+esc(a.domain.status)+')':''}</p>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px" class="xgrid">
+   <div style="display:flex;flex-direction:column;gap:8px"><b>Vista previa</b>${a.html?'<iframe id="xf" sandbox="allow-scripts allow-forms" style="width:100%;height:420px;border:1px solid var(--line);border-radius:10px;background:#fff"></iframe>':'<div class="empty">Sin app todavía.</div>'}
+    <b>Datos del negocio</b><div class="sub" style="white-space:pre-wrap">${esc(JSON.stringify(a.business,null,1)).slice(0,1200)||'—'}</div></div>
+   <div style="display:flex;flex-direction:column;gap:8px"><b>Últimos mensajes</b><div style="max-height:260px;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:8px;font-size:.88em">${a.messages.map(m=>`<p style="margin:0 0 6px"><b>${m.role==='user'?'Persona':m.role==='assistant'?'Contala':'Nota'}:</b> ${esc(String(m.content).slice(0,400))}</p>`).join('')||'—'}</div>
+    <b>Dejar una sugerencia</b><label class="f">Título<input id="xt" style="border:1.5px solid var(--line);border-radius:10px;padding:9px;background:var(--bg)" placeholder="Ej.: Sumemos reserva de turnos con seña"></label>
+    <label class="f">Mensaje para la persona<textarea id="xb" rows="3" style="border:1.5px solid var(--line);border-radius:10px;padding:9px;background:var(--bg)" placeholder="Explicale el porqué con palabras simples"></textarea></label>
+    <label class="f">Pedido para la IA si toca "Aplicar" (opcional)<textarea id="xk" rows="2" style="border:1.5px solid var(--line);border-radius:10px;padding:9px;background:var(--bg)" placeholder="Ej.: Agregá un calendario de turnos de 45 minutos de lunes a viernes de 9 a 18"></textarea></label>
+    <button class="go" id="xs" style="align-self:flex-start">Enviar como equipo de Contala</button><p class="sub" style="white-space:normal">Le llega a la campanita, a la charla de su app y por mail.</p></div></div>`;
+  $('#sheet').hidden=false;if(a.html)$('#xf').srcdoc=a.html;
+  const close=()=>{$('#sheet').hidden=true;c.style.maxWidth='';c.parentNode.style.placeItems=''};$('#xClose').onclick=close;
+  $('#xs').onclick=async()=>{try{await api(`/api/expert/projects/${id}/suggest`,{body:{title:$('#xt').value,body:$('#xb').value,ask:$('#xk').value}});toast('Sugerencia enviada');close();loadExperts()}catch(e){toast(e.message)}};
+}
+
+/* ---------- Mi negocio ---------- */
+const BIZ_LABELS={nombre:'Nombre',rubro:'Rubro',descripcion:'Descripción',razon_social:'Razón social',cuit:'CUIT',matricula:'Matrícula',whatsapp:'WhatsApp',email:'Mail',telefono:'Teléfono',direccion:'Dirección',zona:'Zona',horarios:'Horarios',redes:'Redes',servicios:'Servicios',formas_de_pago:'Formas de pago',logo_url:'Logo',marca:'Identidad de marca',notas:'Notas'};
+function bizVal(k,v){
+  if(k==='logo_url'&&typeof v==='string')return `<img src="${esc(v)}" alt="Logo">`;
+  if(Array.isArray(v))return v.map(x=>typeof x==='object'?esc(Object.values(x).join(' · ')):esc(x)).join('<br>');
+  if(v&&typeof v==='object')return Object.entries(v).map(([a,b])=>`<div><span class="sub" style="white-space:normal">${esc(a.replace(/_/g,' '))}:</span> ${bizVal(a,b)}</div>`).join('');
+  const t=String(v);return /^#[0-9a-f]{3,8}$/i.test(t)?`<span class="sw" style="background:${t}"></span>${esc(t)}`:esc(t).replace(/(#[0-9a-fA-F]{6})/g,'<span class="sw" style="background:$1"></span>$1');
+}
+async function loadBiz(){
+  const b=await api('/api/business');const keys=Object.keys(b);
+  $('#bizList').innerHTML=keys.length?keys.map(k=>`<div class="biz"><b>${esc(BIZ_LABELS[k]||k.replace(/_/g,' '))}</b><div>${bizVal(k,b[k])}</div></div>`).join('')
+   :'<div class="empty">Todavía no sé nada de tu negocio. Contame en cualquier charla tu nombre, WhatsApp, dirección, horarios o pasame tu logo y manual de marca.</div>';
+}
+
 /* ---------- Mis apps ---------- */
+async function loadVac(){
+  let orgs=[],insts=[],sdrs=[];try{orgs=await api('/api/vac/orgs')}catch(e){}try{insts=await api('/api/inst/orgs')}catch(e){}try{sdrs=await api('/api/sdr/orgs')}catch(e){}
+  const rows=orgs.map(o=>`<a class="prow" style="text-decoration:none" href="${BASE}/v/${esc(o.slug)}/entrar"><div class="pico" style="background:#3D4B8C">V</div><div><b>Vacaciones · ${esc(o.name)}</b><div class="sub">${esc(location.host+BASE)}/v/${esc(o.slug)} · ${o.people} ${o.people==1?'persona':'personas'}</div></div><span class="pill live">Abrir</span></a>`)
+   .concat(insts.map(o=>`<a class="prow" style="text-decoration:none" href="${BASE}/i/${esc(o.slug)}/entrar"><div class="pico" style="background:#6B4BB8">I</div><div><b>Instituto · ${esc(o.name)}</b><div class="sub">${esc(location.host+BASE)}/i/${esc(o.slug)} · ${o.students} ${o.students==1?'alumno':'alumnos'}</div></div><span class="pill live">Abrir</span></a>`))
+   .concat(sdrs.map(o=>`<a class="prow" style="text-decoration:none" href="${BASE}/s/${esc(o.slug)}/entrar"><div class="pico" style="background:#2F5BD3">C</div><div><b>CRM de ventas · ${esc(o.name)}</b><div class="sub">${esc(location.host+BASE)}/s/${esc(o.slug)} · ${o.leads} ${o.leads==1?'lead abierto':'leads abiertos'}</div></div><span class="pill live">Abrir</span></a>`));
+  $('#vlist').innerHTML=rows.length?rows.join(''):'<div class="empty">Todavía no creaste sistemas de gestión.</div>';
+}
+$('#newInst').onclick=()=>{const c=$('#sheetCard');c.innerHTML=`<h2>Nueva gestión de instituto</h2><p>Alumnos y familias, cursos (Kids, Teens, Adultos), profesores que toman asistencia y cargan notas, cuotas y pagos, deudores por mes y comunicados. Las familias ven solo a sus hijos.</p>
+  <label class="f">Nombre del instituto<input id="inn" placeholder="Ej.: Instituto Oxford Haedo"></label><p class="err" id="ierr"></p><div class="row"><button class="go" id="iok">Crear</button><button class="ghost" id="cx">Cancelar</button></div>`;
+  $('#sheet').hidden=false;$('#inn').focus();$('#cx').onclick=()=>$('#sheet').hidden=true;
+  $('#iok').onclick=async()=>{try{const r=await api('/api/inst/orgs',{body:{name:$('#inn').value}});location.href=BASE+'/i/'+r.slug+'/entrar'}catch(e){$('#ierr').textContent=e.message}}};
+$('#newSdr').onclick=()=>{const c=$('#sheetCard');c.innerHTML=`<h2>Nuevo CRM de ventas</h2><p>Para equipos comerciales y SDR: cargá o importá leads, repartilos entre vendedores, seguí cada contacto por etapas, escribí mensajes con IA y mirá los resultados y el ranking del equipo.</p>
+  <label class="f">Nombre de la empresa o del equipo<input id="sn" placeholder="Ej.: Ventas Norte"></label><p class="err" id="serr"></p><div class="row"><button class="go" id="sok">Crear</button><button class="ghost" id="cx">Cancelar</button></div>`;
+  $('#sheet').hidden=false;$('#sn').focus();$('#cx').onclick=()=>$('#sheet').hidden=true;
+  $('#sok').onclick=async()=>{try{const r=await api('/api/sdr/orgs',{body:{name:$('#sn').value}});location.href=BASE+'/s/'+r.slug+'/entrar'}catch(e){$('#serr').textContent=e.message}}};
+$('#newVac').onclick=()=>{const c=$('#sheetCard');c.innerHTML=`<h2>Nuevo sistema de vacaciones</h2><p>Los empleados piden sus días desde el celular, RRHH y Administración aprueban y todos ven el calendario del equipo. Ya trae los feriados de Argentina.</p>
+  <label class="f">Nombre de la empresa<input id="vn" placeholder="Ej.: Estudio Norte"></label><p class="err" id="verr"></p><div class="row"><button class="go" id="vok">Crear</button><button class="ghost" id="cx">Cancelar</button></div>`;
+  $('#sheet').hidden=false;$('#vn').focus();$('#cx').onclick=()=>$('#sheet').hidden=true;
+  $('#vok').onclick=async()=>{try{const r=await api('/api/vac/orgs',{body:{name:$('#vn').value}});location.href=BASE+'/v/'+r.slug+'/entrar'}catch(e){$('#verr').textContent=e.message}}};
 async function loadApps(){
+  loadVac();
   const list=await api('/api/projects');
   $('#plist').innerHTML=list.length?list.map(p=>`<button class="prow" data-go="/apps/${p.id}"><div class="pico">${esc((p.name||'?')[0].toUpperCase())}</div><div><b>${esc(p.name)}</b><div class="sub">${p.live?'/app/'+esc(p.slug):'Sin publicar'} · ${p.ver?'versión '+p.ver:'sin versiones'} · ${new Date(p.updated_at).toLocaleDateString('es-AR')}</div></div><span class="pill ${p.live?'live':'draft'}">${p.live?'En línea':'Borrador'}</span></button>`).join('')
    :'<div class="empty">Todavía no creaste apps. Tocá "+ Nueva app" para empezar.</div>';
@@ -383,24 +540,62 @@ async function openProject(id){
   const lastAi=[...P.messages].reverse().find(m=>m.role==='assistant');
   setChips(lastAi?.meta?.suggestions||[]);
   showHtml(P.html);status();panels();showPane('preview');setDevice(dev);
+  if(pendingSend){const t=pendingSend;pendingSend=null;setTimeout(()=>send(t),300)}else setTimeout(()=>startTour('work'),900);
 }
 function addMsg(role,text,meta){
+  if(role==='note'&&meta?.expert){const x=document.createElement('div');x.className='m expert';x.innerHTML=`<small>De nuestro equipo · ${esc(meta.expert)}</small>${esc(text).replace(/\n/g,'<br>')}`;
+    if(meta.ask){const b=document.createElement('button');b.className='go';b.style.cssText='margin-top:10px;display:flex';b.textContent='Aplicar';b.onclick=()=>{b.disabled=true;b.textContent='Pedido ✓';send(meta.ask)};x.appendChild(b)}
+    $('#msgs').appendChild(x);$('#msgs').scrollTop=1e9;return x}
   const d=document.createElement('div');d.className='m '+(role==='assistant'?'ai':role);
-  d.textContent=role==='note'?'✓ '+text:text;
+  d.textContent=role==='note'?'✓ '+text:(meta?.study?String(text).replace(/\n\(Estudio del sitio:[\s\S]*$/,''):text);
   (meta?.images||[]).forEach(u=>{const i=document.createElement('img');i.src=u;i.alt='';d.appendChild(i)});
-  $('#msgs').appendChild(d);$('#msgs').scrollTop=1e9;return d;
+  (meta?.files||[]).forEach(f=>{if(f.mime==='application/pdf'){const a=document.createElement('a');a.className='fchip';a.href=f.url;a.target='_blank';a.rel='noopener';a.textContent='📄 '+(f.name||'Documento PDF');d.appendChild(document.createElement('br'));d.appendChild(a)}else{const i=document.createElement('img');i.src=f.url;i.alt='';d.appendChild(i)}});
+  $('#msgs').appendChild(d);
+  if(role==='assistant'&&meta?.ideas?.length)addIdeas(meta.ideas);
+  if(role==='assistant'&&meta?.study)addStudy(meta.study);
+  $('#msgs').scrollTop=1e9;return d;
 }
-function setChips(list){$('#chips').innerHTML='';(list||[]).forEach(t=>{const b=document.createElement('button');b.className='chip';b.textContent=t;b.onclick=()=>send(t);$('#chips').appendChild(b)})}
+async function studyFlow(text){
+  busy=true;$('#send').disabled=true;setChips([]);addMsg('user',text);
+  const w=addMsg('assistant','');w.innerHTML='<span class="typing"><i></i><i></i><i></i></span>Estoy recorriendo el sitio y estudiando qué hace, cómo se ve y qué se puede mejorar…';
+  try{const r=await api(`/api/projects/${P.id}/study`,{body:{message:text}});w.textContent=r.reply.replace(/\n\(Estudio del sitio:[\s\S]*$/,'');if(r.study)addStudy(r.study)}
+  catch(e){w.textContent=e.message;w.style.color='var(--warn)'}
+  finally{busy=false;$('#send').disabled=false}
+}
+function addStudy(st){
+  const TT={funcion:'Función',mejora:'Mejora',idea:'Idea nueva'};const L=(t,a)=>a?.length?`<details><summary>${t} (${a.length})</summary><ul>${a.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></details>`:'';
+  const box=document.createElement('div');box.className='study';
+  box.innerHTML=`<b>Estudio de ${esc(st.sitio)}</b>${L('Funciones que tiene',st.funciones)}${L('Lo que hace bien',st.bien)}${L('Lo que se puede mejorar',st.mejorar)}
+   ${st.propuesta?.length?`<div style="font-weight:700;margin-top:4px">Elegí qué querés en tu app</div>${st.propuesta.map((x,k)=>`<label class="prop"><input type="checkbox" data-pp="${k}" ${x.tipo!=='idea'?'checked':''}><div><strong><em>${TT[x.tipo]||'Idea'}</em>${esc(x.title)}</strong><span>${esc(x.why)}</span></div></label>`).join('')}
+   <button class="go" style="align-self:flex-start">Construir con lo elegido</button>`:''}
+   ${st.limites?`<span class="sub" style="white-space:normal">${esc(st.limites)}</span>`:''}
+   <span class="sub" style="white-space:normal">Nos inspiramos en funciones y estructura; tu app lleva tu propia marca, textos y fotos.</span>`;
+  const btn=box.querySelector('.go');
+  if(btn)btn.onclick=()=>{if(busy)return toast('Esperá que termine la respuesta anterior.');const picks=[...box.querySelectorAll('[data-pp]:checked')].map(c=>st.propuesta[c.dataset.pp].ask);
+    if(!picks.length)return toast('Elegí al menos una opción.');btn.disabled=true;btn.textContent='Pedido ✓';
+    send(`${P.html?'Mejorá mi app':'Armá mi app'} tomando como referencia ${st.sitio}, con mi propia identidad (sin copiar marca, textos ni fotos), e incluí: ${picks.join('; ')}`)};
+  $('#msgs').appendChild(box);$('#msgs').scrollTop=1e9;
+}
+function addIdeas(ideas){
+  const box=document.createElement('div');box.className='ideas';
+  box.innerHTML='<b>Ideas para mejorar tu app</b>'+ideas.map((i,k)=>`<div class="idea"><div><strong>${esc(i.title)}</strong><span>${esc(i.why)}</span></div><button data-k="${k}">Sumar</button></div>`).join('')+(ideas.length>1?'<button class="all">Sumar todas</button>':'');
+  const mark=()=>box.querySelectorAll('button').forEach(b=>{b.disabled=true;if(b.dataset.k)b.textContent='Pedida ✓'});
+  box.querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{if(busy)return toast('Esperá que termine la respuesta anterior.');b.disabled=true;b.textContent='Pedida ✓';send(ideas[b.dataset.k].ask||('Sumá esta idea: '+ideas[b.dataset.k].title))});
+  const all=box.querySelector('.all');if(all)all.onclick=()=>{if(busy)return toast('Esperá que termine la respuesta anterior.');mark();send('Sumá todas estas mejoras: '+ideas.map(i=>i.ask||i.title).join('; '))};
+  $('#msgs').appendChild(box);$('#msgs').scrollTop=1e9;
+}
+function setChips(list){$('#chips').innerHTML='';(list||[]).forEach(t=>{const b=document.createElement('button');b.className='chip';b.textContent=t;b.onclick=()=>/investig.*competencia|estudio de mercado/i.test(t)?runMarket():send(t);$('#chips').appendChild(b)})}
 const WAIT=['Pensando…','Armando tu app…','Acomodando el diseño…','Revisando que funcione en celular y compu…','Ya casi…'];
 async function send(text){
   text=(text||'').trim();if(busy||(!text&&!pendingImgs.length))return;
+  if(!pendingImgs.length&&/https?:\/\/\S+|www\.\S+\.[a-z]{2,}/i.test(text))return studyFlow(text);
   busy=true;$('#send').disabled=true;setChips([]);
   const imgs=pendingImgs.slice();pendingImgs=[];$('#pending').innerHTML='';
-  addMsg('user',text||'(imagen)',{images:imgs.map(i=>i.url)});
+  addMsg('user',text||'(archivo)',{files:imgs.map(i=>({url:i.url,mime:i.mime,name:i.name}))});
   const w=addMsg('assistant','');let k=0;const tick=()=>{w.innerHTML='<span class="typing"><i></i><i></i><i></i></span>'+esc(WAIT[Math.min(k++,WAIT.length-1)])};tick();const iv=setInterval(tick,6000);
   try{
-    const r=await api(`/api/projects/${P.id}/chat`,{body:{message:text,images:imgs.map(i=>i.token)}});
-    w.textContent=r.reply;setChips(r.suggestions);
+    const r=await api(`/api/projects/${P.id}/chat`,{body:{message:text,images:imgs.map(i=>({token:i.token,name:i.name}))}});
+    w.textContent=r.reply;setChips(r.suggestions);if(r.ideas?.length)addIdeas(r.ideas);if(r.memory)addMsg('note','Guardado en Mi negocio');
     if(r.name&&P.name==='Nueva app'){P.name=r.name;$('#pName').textContent=r.name}
     if(r.html){P.html=r.html;showHtml(r.html);addMsg('note','Versión '+r.version+' guardada');P=await api('/api/projects/'+P.id);panels();status()}
   }catch(e){w.textContent=e.message;w.style.color='var(--warn)'}
@@ -409,10 +604,15 @@ async function send(text){
 $('#form').onsubmit=e=>{e.preventDefault();const t=$('#say').value;$('#say').value='';send(t)};
 $('#say').onkeydown=e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();$('#form').requestSubmit()}};
 $('#file').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f)return;
-  if(f.size>4*1024*1024)return toast('La imagen supera 4 MB.');
+  const isPdf=f.type==='application/pdf';
+  if(!isPdf&&!f.type.startsWith('image/'))return toast('Podés sumar imágenes o PDF.');
+  if(f.size>8*1024*1024)return toast('El archivo supera 8 MB.');
+  if(pendingImgs.length>=5)return toast('Hasta 5 archivos por mensaje.');
   const b64=await new Promise(r=>{const fr=new FileReader();fr.onload=()=>r(fr.result.split(',')[1]);fr.readAsDataURL(f)});
-  try{const up=await api('/api/uploads',{body:{mime:f.type,base64:b64}});pendingImgs.push(up);
-    const i=document.createElement('img');i.src=up.url;i.alt='Imagen a enviar';$('#pending').appendChild(i);toast('Imagen lista. Escribí qué hacemos con ella y enviá.')}
+  try{const up=await api('/api/uploads',{body:{mime:f.type,base64:b64}});up.name=f.name;pendingImgs.push(up);
+    if(isPdf){const c=document.createElement('span');c.className='fchip';c.textContent='📄 '+f.name;$('#pending').appendChild(c)}
+    else{const i=document.createElement('img');i.src=up.url;i.alt='Imagen a enviar';$('#pending').appendChild(i)}
+    toast(isPdf?'PDF listo. Contale qué es (ej.: "mi manual de marca") y enviá.':'Imagen lista. Escribí qué hacemos con ella y enviá.')}
   catch(x){toast(x.message)}};
 $('#rename').onclick=()=>{const c=$('#sheetCard');c.innerHTML=`<h2>Nombre de la app</h2><label class="f">Nombre<input id="newName" value="${esc(P.name)}"></label><div class="row"><button class="go" id="okName">Guardar</button><button class="ghost" id="cx">Cancelar</button></div>`;$('#sheet').hidden=false;
   $('#cx').onclick=()=>$('#sheet').hidden=true;$('#okName').onclick=async()=>{try{await api('/api/projects/'+P.id,{method:'PATCH',body:{name:$('#newName').value}});P.name=$('#newName').value.trim();$('#pName').textContent=P.name;$('#sheet').hidden=true;toast('Nombre guardado. Para cambiarlo dentro de la app, pedíselo a la IA.')}catch(x){toast(x.message)}}};
@@ -423,16 +623,34 @@ function setDevice(d){dev=d;$$('.seg button').forEach(x=>x.setAttribute('aria-pr
 $$('.seg button').forEach(b=>b.onclick=()=>setDevice(b.dataset.v));
 function status(){$('#dot').className='dot'+(P.live?' live':'');$('#statusTxt').innerHTML=P.live?`<b>En línea</b> · ${esc(location.host+BASE)}/app/${esc(P.slug)}`:'Borrador · todavía no publicada';
   $('#publishBtn').disabled=!P.html;$('#publishBtn').textContent=P.live?'Publicar cambios':'Publicar app'}
-function showPane(p){$$('.stabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.p===p));['preview','versions','data','publication'].forEach(x=>$('#p-'+x).hidden=x!==p);if(p==='data')loadData()}
+function showPane(p){$$('.stabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.p===p));['preview','versions','data','publication','market'].forEach(x=>$('#p-'+x).hidden=x!==p);if(p==='data')loadData();if(p==='market')loadMarket()}
 $$('.stabs button').forEach(b=>b.onclick=()=>showPane(b.dataset.p));
 $$('.wtabs button').forEach(b=>b.onclick=()=>{$('#v-work').dataset.tab=b.dataset.t;$$('.wtabs button').forEach(x=>x.setAttribute('aria-selected',x===b))});
 
 function panels(){
   $('#versionsPanel').innerHTML=`<h3>Versiones</h3><p>Cada cambio que hace la IA queda guardado. Podés volver a cualquiera.</p>`+(P.versions.length?`<div class="box">${P.versions.map((v,i)=>`<div class="vrow"><span class="pill ${v.published?'live':'draft'}">${v.published?'Publicada':'v'+v.n}</span><div><b>${esc(v.note||'Cambio')}</b><div class="sub">Versión ${v.n} · ${new Date(v.created_at).toLocaleString('es-AR')}</div></div>${i===0?'<span class="sub">Actual</span>':`<button class="mini" data-restore="${v.id}">Volver a esta</button>`}</div>`).join('')}</div>`:'<div class="box"><div class="empty">Todavía no hay versiones.</div></div>');
   $$('[data-restore]').forEach(b=>b.onclick=async()=>{await api(`/api/projects/${P.id}/restore/${b.dataset.restore}`,{method:'POST'});toast('Listo. Si te gusta, tocá Publicar cambios.');openProject(P.id)});
-  $('#pubPanel').innerHTML=P.live?`<h3>Tu app está en línea</h3><div class="livelink">${esc(P.url)}</div><div class="row"><a class="ghost" href="${esc(P.url)}" target="_blank" rel="noopener">Abrir</a><button class="ghost" id="cp2">Copiar link</button><button class="ghost" id="unpub">Despublicar</button></div><p>Los cambios que hagas en la charla se ven en la vista previa. Para que lleguen a tu app, tocá <b>Publicar cambios</b>.</p>`
+  $('#pubPanel').innerHTML=P.live?`<h3>Tu app está en línea</h3><div class="livelink">${esc(P.url)}</div><div class="row"><a class="ghost" href="${esc(P.url)}" target="_blank" rel="noopener">Abrir</a><button class="ghost" id="cp2">Copiar link</button><button class="ghost" id="unpub">Despublicar</button></div><p>Los cambios que hagas en la charla se ven en la vista previa. Para que lleguen a tu app, tocá <b>Publicar cambios</b>.</p><div id="domBox" class="box" style="padding:14px;display:flex;flex-direction:column;gap:10px"></div>`
     :`<h3>Publicación</h3><p>Cuando la app esté como querés, tocá <b>Publicar app</b>: elegís el link y queda funcionando.</p>`;
-  if(P.live){$('#cp2').onclick=()=>copy(P.url);$('#unpub').onclick=async()=>{await api(`/api/projects/${P.id}/unpublish`,{method:'POST'});toast('La app ya no está publicada.');openProject(P.id)}}
+  if(P.live){loadDomain();$('#cp2').onclick=()=>copy(P.url);$('#unpub').onclick=async()=>{await api(`/api/projects/${P.id}/unpublish`,{method:'POST'});toast('La app ya no está publicada.');openProject(P.id)}}
+}
+async function loadDomain(){
+  const box=$('#domBox');if(!box)return;let r;try{r=await api(`/api/projects/${P.id}/domain`)}catch(e){return}
+  const d=r.domain,ip=r.ips[0]||'(la IP de tu servidor)';
+  if(!d){box.innerHTML=`<h3 style="font-size:1.05em">Usar mi propio dominio</h3><p>¿Tenés un dominio, como <b>tunegocio.com.ar</b>? Tu app puede abrir directo ahí.</p><div class="field"><span>https://</span><input id="domIn" placeholder="tunegocio.com.ar"></div><p class="err" id="domErr"></p><button class="go" id="domGo" style="align-self:flex-start">Conectar mi dominio</button>
+    <p class="sub" style="white-space:normal">¿No tenés dominio? Los .com.ar se registran en nic.ar con tu clave fiscal; los .com en cualquier registrador.</p>`;
+    $('#domGo').onclick=async()=>{try{await api(`/api/projects/${P.id}/domain`,{body:{domain:$('#domIn').value}});loadDomain()}catch(e){$('#domErr').textContent=e.message}};return}
+  if(d.status==='pendiente'){box.innerHTML=`<h3 style="font-size:1.05em">Conectar ${esc(d.domain)}</h3>
+    <p>Entrá a donde administrás tu dominio (tu hosting, NIC.ar o tu registrador) → zona DNS, y agregá estos registros:</p>
+    <div class="tblwrap"><table class="t"><tr><th>Tipo</th><th>Nombre</th><th>Valor</th></tr><tr><td>CNAME</td><td>www</td><td><b>${esc(r.target)}</b></td></tr><tr><td>A</td><td>@ (o vacío)</td><td><b>${esc(ip)}</b></td></tr></table></div>
+    <p class="sub" style="white-space:normal">⚠️ No borres ni cambies los registros <b>MX</b>: son los de tu correo. Si ya hay un registro A o CNAME para @ o www, reemplazalo por estos.</p>
+    <div class="row"><button class="go" id="domVer">Ya lo hice, verificar</button><button class="ghost" id="domHelp">Que lo haga el equipo de Contala</button><button class="ghost" id="domDel">Quitar</button></div><p class="sub" id="domMsg" style="white-space:normal"></p>`;
+    $('#domVer').onclick=async()=>{$('#domMsg').textContent='Verificando…';const v=await api(`/api/projects/${P.id}/domain/verify`,{method:'POST'});if(v.ok){toast('¡Tu dominio ya apunta a Contala!');loadDomain()}else $('#domMsg').textContent=v.message};
+    $('#domHelp').onclick=async()=>{await api(`/api/projects/${P.id}/help`,{body:{message:`Conectar el dominio ${d.domain}`}});toast('Listo, nuestro equipo te va a ayudar con el dominio.');addMsg('note','Pediste ayuda a nuestro equipo')};
+    $('#domDel').onclick=async()=>{await api(`/api/projects/${P.id}/domain`,{method:'DELETE'});loadDomain()};return}
+  box.innerHTML=d.status==='activo'?`<h3 style="font-size:1.05em">Tu dominio</h3><div class="livelink"><a href="https://${esc(d.domain)}" target="_blank" rel="noopener">${esc(d.domain)}</a></div><p class="sub" style="white-space:normal">Conectado. Si todavía no ves el candado, puede tardar unas horas.</p><button class="ghost" id="domDel" style="align-self:flex-start">Desconectar</button>`
+    :`<h3 style="font-size:1.05em">${esc(d.domain)}: casi listo</h3><p>Tu dominio ya apunta a Contala. Nuestro equipo lo está activando junto con el candado de seguridad; te avisamos apenas quede funcionando (suele ser en el día).</p><button class="ghost" id="domDel" style="align-self:flex-start">Cancelar</button>`;
+  $('#domDel').onclick=async()=>{await api(`/api/projects/${P.id}/domain`,{method:'DELETE'});loadDomain()};
 }
 async function loadData(){
   const rows=await api(`/api/projects/${P.id}/records`);
@@ -476,8 +694,133 @@ $$('[data-mic]').forEach(b=>b.onclick=()=>{
   rec.onend=()=>b.classList.remove('rec');rec.onerror=()=>{b.classList.remove('rec');toast('No pude escucharte. Revisá el permiso del micrófono.')};rec.start();
 });
 
+/* ---------- Notificaciones (ideas mientras dormís) ---------- */
+async function loadBell(){try{notes=await api('/api/notifications');const c=$('#bcount');c.hidden=!notes.unread;c.textContent=notes.unread}catch(e){}}
+setInterval(()=>{if(me)loadBell()},5*60*1000);
+async function openBell(){
+  await loadBell();const c=$('#sheetCard');const rows=notes.rows;
+  c.innerHTML=`<h2>Ideas para tus apps</h2><p>Mientras no estás, el equipo de Contala revisa tus apps y te deja mejoras. Las aplicás con un toque.</p>
+  ${rows.length?rows.map(n=>`<div class="ncard${n.status==='nueva'?' new':''}"><small>${n.kind==='experto'?'De nuestro equipo':'Sugerencia'}${n.project?' · '+esc(n.project):''}</small><b>${esc(n.title)}</b>${n.body?`<p>${esc(n.body)}</p>`:''}
+    <div class="row">${n.ask&&n.project_id?`<button class="go" data-ap="${n.id}">Aplicar</button>`:''}<button class="ghost" data-lt="${n.id}">Más tarde</button><button class="ghost" data-no="${n.id}">No me interesa</button></div></div>`).join(''):'<div class="empty">Todavía no hay ideas nuevas. Seguí trabajando en tus apps y mañana te dejamos sugerencias.</div>'}
+  <div class="box" style="padding:12px 14px;display:flex;flex-direction:column;gap:8px"><label style="font-weight:600;display:flex;gap:8px;align-items:flex-start"><input type="checkbox" id="pfS" style="margin-top:5px" ${notes.prefs.suggestions?'checked':''}> Recibir sugerencias de mejora (máximo 3 por día)</label>
+  <label style="font-weight:600;display:flex;gap:8px;align-items:flex-start"><input type="checkbox" id="pfD" style="margin-top:5px" ${notes.prefs.digest?'checked':''}> Mandarme un resumen por mail a la mañana</label></div>
+  <button class="go" id="bClose">Cerrar</button>`;
+  $('#sheet').hidden=false;$('#bClose').onclick=()=>$('#sheet').hidden=true;
+  if(notes.unread){api('/api/notifications/read',{method:'POST'}).then(loadBell).catch(()=>{})}
+  const setSt=(id,status)=>api('/api/notifications/'+id,{body:{status}});
+  c.querySelectorAll('[data-ap]').forEach(b=>b.onclick=async()=>{const n=rows.find(x=>x.id==b.dataset.ap);await setSt(n.id,'aplicada');$('#sheet').hidden=true;
+    if(P&&P.id===n.project_id&&!$('#v-work').hidden){send(n.ask)}else{pendingSend=n.ask;go('/apps/'+n.project_id)}});
+  c.querySelectorAll('[data-lt]').forEach(b=>b.onclick=async()=>{await setSt(b.dataset.lt,'luego');b.closest('.ncard').style.opacity=.5;toast('Te lo dejamos para más tarde.')});
+  c.querySelectorAll('[data-no]').forEach(b=>b.onclick=async()=>{await setSt(b.dataset.no,'descartada');b.closest('.ncard').remove();toast('Listo, no te lo volvemos a sugerir.')});
+  $('#pfS').onchange=e=>api('/api/notification-prefs',{body:{suggestions:e.target.checked}});
+  $('#pfD').onchange=e=>api('/api/notification-prefs',{body:{digest:e.target.checked}});
+}
+$('#bellBtn').onclick=openBell;
+$('#reviewBtn').onclick=async()=>{
+  if(busy)return toast('Esperá que termine la respuesta anterior.');
+  if(!P.html)return toast('Primero contale tu idea a Contala.');
+  busy=true;const w=addMsg('assistant','');w.innerHTML='<span class="typing"><i></i><i></i><i></i></span>El equipo está revisando tu app (diseño, funciones, celular y compu, privacidad)…';
+  try{const r=await api(`/api/projects/${P.id}/review`,{method:'POST'});
+    if(r.suggestions.length){w.textContent='Revisé tu app. Te propongo estas mejoras:';addIdeas(r.suggestions.map(x=>({title:x.title,why:x.why,ask:x.ask})))}
+    else w.textContent='Revisé tu app y está muy bien. Por ahora no tengo mejoras importantes para sugerirte.';
+    loadBell();
+  }catch(e){w.textContent=e.message;w.style.color='var(--warn)'}finally{busy=false}
+};
+
+/* ---------- Estudio de mercado ---------- */
+let marketBusy=false;
+function marketHtml(m){
+  const L=(t,a)=>a&&a.length?`<h4>${t}</h4><ul>${a.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'';
+  return `<div class="mk" style="display:flex;flex-direction:column;gap:12px">
+   <div class="row" style="justify-content:space-between"><h3>Estudio de mercado${m.rubro?' · '+esc(m.rubro):''}${m.zona?' ('+esc(m.zona)+')':''}</h3><button class="mini" id="mkAgain">Investigar de nuevo</button></div>
+   ${m.resumen?`<p style="color:var(--ink)">${esc(m.resumen)}</p>`:''}
+   ${m.competidores?.length?`<div class="box" style="padding:4px 14px"><h4 style="margin-top:10px">Competidores y referentes</h4>${m.competidores.map(c=>`<div class="comp"><b>${c.url?`<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.nombre)}</a>`:esc(c.nombre)}</b><span class="sub" style="white-space:normal">${esc(c.ofrece)}</span></div>`).join('')}</div>`:''}
+   ${L('Lo que no puede faltar',m.imprescindibles)}${L('Lo que diferencia',m.diferenciales)}${L('Oportunidades',m.oportunidades)}${L('Tendencias',m.tendencias)}
+   ${m.ideas?.length?`<h4>Ideas para tu app</h4><div id="mkIdeas"></div>`:''}
+   ${m.sources?.length?`<p class="src">Fuentes: ${m.sources.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title||s.url)}</a>`).join(' · ')}</p>`:''}
+   <p class="src">La información viene de búsquedas en internet y puede no estar actualizada. Nos inspiramos en funciones, nunca copiamos marcas ni textos.</p></div>`;
+}
+function bindMarket(m){
+  const again=$('#mkAgain');if(again)again.onclick=runMarket;
+  const box=$('#mkIdeas');if(box&&m.ideas)box.innerHTML=m.ideas.map((i,k)=>`<div class="idea"><div><strong>${esc(i.title)}</strong><span>${esc(i.why)}</span></div><button data-mk="${k}">Sumar</button></div>`).join('');
+  $$('[data-mk]').forEach(b=>b.onclick=()=>{if(busy)return toast('Esperá que termine la respuesta anterior.');b.disabled=true;b.textContent='Pedida ✓';if(innerWidth<=860)$$('.wtabs button')[0].click();send(m.ideas[b.dataset.mk].ask)});
+}
+async function loadMarket(){
+  if(marketBusy)return;const pnl=$('#marketPanel');
+  let m=null;try{m=await api(`/api/projects/${P.id}/market`)}catch(e){}
+  if(!m){pnl.innerHTML=`<h3>Estudio de mercado</h3><p>Contala investiga en internet qué hacen otros negocios de tu rubro: qué funciones no pueden faltar, cuáles te diferencian y qué oportunidades hay. Después te propone ideas para tu app.</p><button class="go" id="mkGo" style="align-self:flex-start">Investigar mi competencia</button>`;$('#mkGo').onclick=runMarket;return}
+  pnl.innerHTML=marketHtml(m);bindMarket(m);
+}
+async function runMarket(){
+  if(marketBusy)return;marketBusy=true;showPane('market');if(innerWidth<=860)$$('.wtabs button')[1].click();
+  $('#marketPanel').innerHTML='<h3>Investigando tu mercado…</h3><p><span class="typing"><i></i><i></i><i></i></span> Buscando competidores y referentes de tu rubro, mirando qué ofrecen y qué reclama la gente. Puede tardar hasta un minuto.</p>';
+  try{const m=await api(`/api/projects/${P.id}/market`,{method:'POST'});$('#marketPanel').innerHTML=marketHtml(m);bindMarket(m);addMsg('note','Estudio de mercado listo · mirá la pestaña Mercado')}
+  catch(e){$('#marketPanel').innerHTML=`<h3>Estudio de mercado</h3><p class="err">${esc(e.message)}</p><button class="go" id="mkGo" style="align-self:flex-start">Probar de nuevo</button>`;$('#mkGo').onclick=runMarket}
+  finally{marketBusy=false}
+}
+
+/* ---------- Guía: recorrido y ayuda ---------- */
+const TOURS={
+ home:[
+  {sel:['.composer'],t:'Contá tu idea',d:'Escribí con tus palabras, o tocá "Dictar" y hablá. Contala arma tu app y la vas mejorando conversando.'},
+  {sel:['#tpls'],t:'O empezá con una idea de tu profesión',d:'Tocá una tarjeta y Contala arranca con una propuesta pensada para tu rubro.'},
+  {sel:['[data-nav=apps]'],t:'Tus apps quedan acá',d:'Todas las apps que crees, publicadas o en borrador. Entrás cuando quieras y seguís mejorándolas.'},
+  {sel:['[data-nav=negocio]'],t:'Contala te recuerda',d:'Lo que le cuentes de tu negocio (WhatsApp, dirección, logo, colores) se guarda y se usa en todas tus apps.'},
+ ],
+ work:[
+  {sel:['#form'],t:'Pedí lo que quieras',d:'Escribí o dictá cambios ("más moderno", "agregá mis horarios"). Con el clip sumás fotos, tu logo o un PDF.'},
+  {sel:['#dev','.wtabs [data-t=app]'],t:'Tu app aparece acá',d:'Se actualiza con cada cambio. Probala en "Celular" y en "Compu": tiene que verse bien en los dos.'},
+  {sel:['#publishBtn','.wtabs [data-t=app]'],t:'Cuando te guste, publicala',d:'Elegís el link y queda funcionando. Los cambios que hagas después también se publican con un toque.'},
+  {sel:['#helpBtn'],t:'Si te perdés, tocá Ayuda',d:'Ahí tenés ejemplos de qué pedir y podés ver este recorrido de nuevo.'},
+ ]};
+let tour=null;
+function visible(el){if(!el)return false;const r=el.getBoundingClientRect();return r.width>0&&r.height>0}
+function startTour(name,force){
+  if(!me||tour)return;if(!force&&flags.includes('tour_'+name))return;
+  const view=name==='home'?'#v-home':'#v-work';if($(view).hidden)return;
+  tour={name,steps:TOURS[name],i:0};showStep();
+}
+function showStep(){
+  const st=tour.steps[tour.i];const el=st.sel.map(x=>$(x)).find(visible);
+  if(!el){return nextStep()}
+  el.scrollIntoView({block:'center',behavior:'instant'});
+  const r=el.getBoundingClientRect(),pad=6,spot=$('#spot'),c=$('#tcard');
+  Object.assign(spot.style,{left:(r.left-pad)+'px',top:(r.top-pad)+'px',width:(r.width+pad*2)+'px',height:(r.height+pad*2)+'px'});
+  const last=tour.i===tour.steps.length-1;
+  c.innerHTML=`<small>Paso ${tour.i+1} de ${tour.steps.length}</small><h3>${esc(st.t)}</h3><p>${esc(st.d)}</p><div class="row"><button class="ghost" id="tSkip">Saltar</button><button class="go" id="tNext">${last?'¡Listo!':'Siguiente'}</button></div>`;
+  $('#tour').hidden=false;c.hidden=false;
+  const ch=c.offsetHeight,cw=c.offsetWidth,vh=innerHeight,vw=innerWidth;
+  let top=r.bottom+14;if(top+ch>vh-12)top=r.top-ch-14;if(top<12)top=Math.max(12,vh-ch-12);
+  let left=Math.min(Math.max(16,r.left),vw-cw-16);
+  Object.assign(c.style,{top:top+'px',left:left+'px'});
+  $('#tNext').onclick=nextStep;$('#tSkip').onclick=endTour;$('#tNext').focus();
+}
+function nextStep(){if(!tour)return;tour.i++;if(tour.i>=tour.steps.length)return endTour();showStep()}
+function endTour(){if(!tour)return;const f='tour_'+tour.name;tour=null;$('#tour').hidden=true;$('#tcard').hidden=true;
+  if(!flags.includes(f)){flags.push(f);api('/api/flags',{body:{flag:f}}).catch(()=>{})}}
+addEventListener('resize',()=>{if(tour)showStep()});
+addEventListener('keydown',e=>{if(tour&&e.key==='Escape')endTour()});
+
+const EXAMPLES=['Quiero algo como https://… pero mejor','Quiero una app de turnos para mi consultorio','Agregá un botón de WhatsApp','Hacela más moderna y con colores cálidos','Mi WhatsApp es …','Te paso mi logo','Toco el botón y no pasa nada'];
+$('#helpBtn').onclick=()=>{
+  const inWork=!$('#v-work').hidden;const c=$('#sheetCard');
+  c.innerHTML=`<div class="help" style="display:flex;flex-direction:column;gap:14px"><h2>¿Cómo te ayudo?</h2>
+  <ol><li><b>Contá tu idea</b> con tus palabras, o elegí una de tu profesión.</li><li><b>Mirá tu app</b> en vivo y pedí cambios conversando.</li><li><b>Publicala</b> y compartí el link.</li><li><b>Seguí mejorándola</b> cuando quieras.</li></ol>
+  <div><p class="eyebrow" style="margin-bottom:8px">Ejemplos de qué pedir</p><div class="exs">${EXAMPLES.map((x,i)=>`<button class="chip" data-ex="${i}">${esc(x)}</button>`).join('')}</div></div>
+  <p style="margin:0;color:var(--muted)">Si algo no funciona, contáselo a Contala con tus palabras: qué tocaste y qué esperabas que pase.</p>
+  <div class="row">${me?'<button class="ghost" id="hTour">Ver el recorrido de nuevo</button>':''}${me&&inWork?'<button class="ghost" id="hHuman">Pedir ayuda a una persona</button>':''}<button class="go" id="hClose">Cerrar</button></div></div>`;
+  $('#sheet').hidden=false;
+  $('#hClose').onclick=()=>$('#sheet').hidden=true;
+  const hh=$('#hHuman');if(hh)hh.onclick=()=>{c.innerHTML=`<h2>Pedir ayuda a una persona</h2><p>Contanos qué necesitás o en qué te trabaste. Alguien de nuestro equipo revisa tu app y te responde acá y por mail.</p><label class="f">Tu mensaje<textarea id="hm" rows="4" style="border:1.5px solid var(--line);border-radius:10px;padding:10px;background:var(--bg)"></textarea></label><div class="row"><button class="go" id="hs">Enviar</button><button class="ghost" id="hc">Cancelar</button></div>`;
+    $('#hc').onclick=()=>$('#sheet').hidden=true;$('#hs').onclick=async()=>{await api(`/api/projects/${P.id}/help`,{body:{message:$('#hm').value}});$('#sheet').hidden=true;addMsg('note','Pediste ayuda a nuestro equipo');toast('Listo. Te respondemos acá y por mail.')}};
+  const ht=$('#hTour');if(ht)ht.onclick=()=>{$('#sheet').hidden=true;if(inWork&&innerWidth<=860)$$('.wtabs button')[0].click();startTour(inWork?'work':'home',true)};
+  c.querySelectorAll('[data-ex]').forEach(b=>b.onclick=()=>{$('#sheet').hidden=true;const t=EXAMPLES[b.dataset.ex].replace(' …',' ');
+    if(inWork){if(innerWidth<=860)$$('.wtabs button')[0].click();$('#say').value=t;$('#say').focus()}
+    else{if($('#v-home').hidden)go('/');$('#idea').value=t;$('#idea').dispatchEvent(new Event('input'));$('#idea').focus()}});
+};
+
 /* ---------- Inicio ---------- */
-(async()=>{try{const r=await api('/api/me');me=r.user}catch(e){}setAuth();route()})();
+(async()=>{try{const r=await api('/api/me');me=r.user;flags=r.flags||[];isExpert=!!r.isExpert}catch(e){}setAuth();route();if(me&&/notificaciones=1/.test(location.search))openBell()})();
 </script>
 </body>
 </html>
